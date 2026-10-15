@@ -61,9 +61,9 @@ export function BrandPage({ brand }: { brand: Brand }) {
     <div className="min-h-screen">
       <SiteHeader nameA={brand.nameA} nameB={brand.nameB} />
 
-      <main className="mx-auto max-w-6xl px-4 pb-16 sm:px-5 sm:pb-24">
+      <main className="mx-auto max-w-6xl px-4 pb-8 sm:px-5 sm:pb-12">
         {/* Hero */}
-        <section className="py-12 text-center sm:py-20">
+        <section className="pt-12 pb-4 text-center sm:pt-20 sm:pb-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-[10px] font-bold  text-primary uppercase sm:px-5 sm:text-[11px] ">
             ☆ The Official {brand.name} Web Directory
           </span>
@@ -96,8 +96,13 @@ export function BrandPage({ brand }: { brand: Brand }) {
           </a>
         </section>
 
+        {/* Share */}
+        <section className="py-4 sm:py-6">
+          <ShareBar name={brand.name} url={new URL("/", brand.siteUrl).href} />
+        </section>
+
         {/* Quick access */}
-        <section className="py-8">
+        <section className="py-6">
           <SectionLabel icon={LayoutGrid}>Quick Access</SectionLabel>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
             {brand.quickAccess.map((q, i) => {
@@ -154,7 +159,7 @@ export function BrandPage({ brand }: { brand: Brand }) {
         </section>
 
         {/* About */}
-        <section className="py-12">
+        <section className="py-8">
           <SectionLabel icon={FileText}>About {brand.name}</SectionLabel>
           <div className="grid gap-6 lg:grid-cols-2">
             <article className="panel border-l-2 border-l-primary p-5 sm:p-7">
@@ -227,11 +232,6 @@ export function BrandPage({ brand }: { brand: Brand }) {
               </div>
             </article>
           </div>
-        </section>
-
-        {/* Share */}
-        <section className="py-8">
-          <ShareBar name={brand.name} url={brand.siteUrl} />
         </section>
 
       </main>
