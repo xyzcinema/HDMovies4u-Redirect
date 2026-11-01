@@ -1,17 +1,14 @@
 {
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "https://Hubstream.sbs",
-      "permanent": true
-    }
-  ]
-}
-
-{
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "bun install --frozen-lockfile",
   "buildCommand": "bun run build",
-  "outputDirectory": ".vercel/output"
+  "outputDirectory": ".vercel/output",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://hubstream.sbs",
+      "permanent": true
+    }
+  ]
 }
